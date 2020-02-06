@@ -9,5 +9,7 @@ public interface PlanService {
 	void addList(List<Plan> addList);
 
 	Object getAll(Integer pageNum, String name);
+
+	Plan getOne(Integer id);
      
 }

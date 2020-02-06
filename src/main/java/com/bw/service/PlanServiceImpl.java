@@ -29,5 +29,9 @@ public class PlanServiceImpl implements PlanService{
 		PageMethod.startPage(pageNum,5);
 		return new PageInfo<Plan>(dao.getAll(name));
 	}
+	@Override
+	public Plan getOne(Integer id) {
+		return dao.getOne(id);
+	}
 
 }

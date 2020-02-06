@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="/resource/css/bootstrap.css">
-<script type="text/javascript" src="/resource/js/jquery-3.2.1.js"></script>
+<script type="text/javascript" src="/jquery-3.2.1.js"></script>
 <script type="text/javascript" src="/resource/js/bootstrap.min.js"></script>
 <script type="text/javascript">
 function fenye(pageNum) {
@@ -17,7 +17,7 @@ function fenye(pageNum) {
 </script>
 </head>
 <body>
-<form action="PlanList.do" method="post" id="myForm">
+<form action="PlanList" method="post" id="myForm">
   <input type="hidden" name="pageNum" value="${page.pageNum}">
   项目名称:<input type="text" name="name" value="${name}">
   <input type="submit" class="btn btn-dark" value="搜索">
@@ -46,7 +46,7 @@ function fenye(pageNum) {
         <th>${p.name}</th>
         <th>${p.amount}</th>
         <th>${p.manager}</th>
-        <th>${p.d.name}</th>
+        <th>${p.d.dname}</th>
         <td>
           <a href="getOne?id=${p.id}">查看详情</a>
           <a href="toUpd?id=${p.id}">编辑</a>

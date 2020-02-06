@@ -18,10 +18,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	  <result property="content" column="content"/>
 	  <association property="d" javaType="Department">
 	   <id property="id" column="id"/>
-	   <result property="name" column="name"/>
+	   <result property="dname" column="name1"/>
 	  </association>
 	</resultMap>
 	<select id="getAll" resultMap="planMap">
-	  select p.*,d.* form zhunneng_2019plan p join zhunneng_department d on p.dept_id=d.id
+	  select p.*,d.* from zhunneng_2019plan p join zhunneng_departmen d on p.dept_id=d.id
+	  <where>
+	      <if test="name!=null and name!=''">and p.name like '%${name}%'</if>
+	  </where>
+	</select>
+	
+	<select id="getOne" resultMap="planMap">
+	   select p.*,d.* from zhunneng_2019plan p join zhunneng_departmen d on p.dept_id=d.id where p.id=#{id}
 	</select>
 </mapper>

@@ -262,31 +262,13 @@
 					<path>/</path>
 					<!-- get请求中文乱码 -->
 					<uriEncoding>utf-8</uriEncoding>
+					<staticContextPath>/pic</staticContextPath>
+           	 	<staticContextDocbase>e:/pic/</staticContextDocbase>
+            	<contextReloadable>false</contextReloadable>
+            	<useTestClasspath>true</useTestClasspath>
+				</configuration>
+			</plugin>
 
-				</configuration>
-			</plugin>
-            <plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.3.7.v20160115</version>
-				<configuration>
-					<httpConnector>
-					   <!-- 端口号 -->
-						<port>80</port>
-						<!-- 项目访问路径 -->
-						<host>localhost</host>
-					</httpConnector>
-				  <contextHandlers>
-					   <jettyWebAppContext>
-					 <!--     虚拟路径 -->
-					    <contextPath>/pic</contextPath>
-					<!--     物理路径 -->
-					    <resourceBase>e:/pic/</resourceBase>
-					   </jettyWebAppContext>
-					</contextHandlers>
-					<scanIntervalSeconds>1</scanIntervalSeconds>
-				</configuration>
-			</plugin>
 
 		</plugins>
 	</build>
